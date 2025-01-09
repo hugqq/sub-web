@@ -49,29 +49,6 @@
                 </el-select>
               </el-form-item>
 
-              <el-form-item label="远程配置:">
-                <el-select
-                    v-model="form.remoteConfig"
-                    allow-create
-                    filterable
-                    placeholder="请选择"
-                    style="width: 100%"
-                >
-                  <el-option-group
-                      v-for="group in options.remoteConfig"
-                      :key="group.label"
-                      :label="group.label"
-                  >
-                    <el-option
-                        v-for="item in group.options"
-                        :key="item.value"
-                        :label="item.label"
-                        :value="item.value"
-                    ></el-option>
-                  </el-option-group>
-                </el-select>
-              </el-form-item>
-
               <el-form-item label-width="0px">
                 <el-collapse>
                   <el-collapse-item>
@@ -82,6 +59,28 @@
                         </el-button>
                       </el-form-item>
                     </template>
+                    <el-form-item label="远程配置:">
+                      <el-select
+                          v-model="form.remoteConfig"
+                          allow-create
+                          filterable
+                          placeholder="请选择"
+                          style="width: 100%"
+                      >
+                        <el-option-group
+                            v-for="group in options.remoteConfig"
+                            :key="group.label"
+                            :label="group.label"
+                        >
+                          <el-option
+                              v-for="item in group.options"
+                              :key="item.value"
+                              :label="item.label"
+                              :value="item.value"
+                          ></el-option>
+                        </el-option-group>
+                      </el-select>
+                    </el-form-item>
                     <el-form-item label="包含节点:">
                       <el-input
                           v-model="form.includeRemarks"
